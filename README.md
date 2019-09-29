@@ -15,5 +15,5 @@ $ yarn
 ## Getting Started
 
 ```shell
-$ yarn start
+$ yarn dev
 ```
