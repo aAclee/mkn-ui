@@ -6,13 +6,9 @@ import serve from 'koa-static';
 const app = new Koa();
 const router = new Router();
 
-function add(a: number, b: number): number {
-  return a + b;
-}
-
 app.use(serve('./dist'));
 
-router.get('/', async function (ctx, next) {
+router.get('/', async function (ctx) {
   await ctx.render('index')
 })
 
