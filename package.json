@@ -18,7 +18,9 @@
   "repository": "https://github.com/clee421/mkn-ui",
   "dependencies": {
     "@csstools/normalize.css": "^10.1.0",
+    "graphql": "^14.5.8",
     "koa": "^2.8.2",
+    "koa-graphql": "^0.8.0",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.2.1",
@@ -27,8 +29,10 @@
     "react-dom": "^16.10.1"
   },
   "devDependencies": {
+    "@types/graphql": "^14.5.0",
     "@types/jest": "^24.0.18",
     "@types/koa": "^2.0.50",
+    "@types/koa-graphql": "^0.8.3",
     "@types/koa-router": "^7.0.42",
     "@types/koa-static": "^4.0.1",
     "@types/koa-views": "^2.0.3",
