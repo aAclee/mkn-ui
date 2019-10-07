@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@mkn-types/*": ["types/*"]
+    },
     "target": "es2017",
     "lib": [
       "dom",
@@ -14,8 +18,9 @@
     "esModuleInterop": true
   },
   "include": [
-    "./client/**/*",
-    "./server/**/*"
+    "client/**/*",
+    "server/**/*",
+    "types"
   ],
   "exclude": ["node_modules"]
 }
