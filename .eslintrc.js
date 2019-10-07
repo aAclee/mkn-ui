@@ -21,6 +21,8 @@ module.exports = {
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "rules": {
-    "no-console": 2
+    "no-console": 2,
+    "semi": 2,
+    "comma-dangle": [2, "always-multiline"],
   }
 }
