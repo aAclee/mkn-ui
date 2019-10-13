@@ -6,14 +6,14 @@ export interface FormInput {
 }
 
 export interface FormInputConfig {
+  name: string;
   type?: string;
-  name?: string;
   height?: string;
 }
 
 export function useFormInput(
   initialValue: string,
-  config: FormInputConfig = {},
+  config: FormInputConfig,
 ): FormInput & FormInputConfig {
   const [value, setValue] = useState(initialValue);
 
@@ -26,5 +26,6 @@ export function useFormInput(
     onChange: handleChange,
     type: 'text',
     ...config,
+    ...{ 'data-test': `${config.name}`},
   };
 }
