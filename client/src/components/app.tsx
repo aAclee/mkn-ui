@@ -46,7 +46,7 @@ const App: React.FC = (): ReactElement => {
       </div>
 
       <div className="submit-container">
-        <button type="button" onClick={handleSubmit}>
+        <button type="button" data-test="submit-btn" onClick={handleSubmit}>
           Submit
         </button>
       </div>
