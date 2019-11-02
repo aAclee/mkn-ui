@@ -8,7 +8,7 @@ module.exports = {
     "ecmaVersion": 6,
     "sourceType": "module",
     "ecmaFeatures": {
-      "jsx": true
+      "tsx": true
     },
   },
   "plugins": [
@@ -18,7 +18,8 @@ module.exports = {
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended"
   ],
   "rules": {
     "no-console": 2,
