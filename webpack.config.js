@@ -18,7 +18,13 @@ module.exports = {
   devtool: 'source-map',
 
   resolve: {
-    extensions: ['.ts', '.tsx', '.js']
+    extensions: ['.ts', '.tsx', '.js'],
+    alias: {
+      '@components': path.resolve(__dirname, 'client/src/components'),
+      '@hooks': path.resolve(__dirname, 'client/src/hooks'),
+      '@store': path.resolve(__dirname, 'client/src/store'),
+      '@util': path.resolve(__dirname, 'client/lib/util'),
+    }
   },
 
   module: {
@@ -41,33 +47,9 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ],
-        // use: [
-        //   { loader: 'style-loader' },
-        //   {
-        //     loader: 'css-loader',
-        //     // options: {
-        //     //   discardDuplicates: true,
-        //     //   importLoaders: 1,
-        //     //   // This enables local scoped CSS based in CSS Modules spec
-        //     //   modules: true,
-        //     //   // generates a unique name for each class (e.g. app__app___2x3cr)
-        //     //   localIdentName: '[name]__[local]___[hash:base64:5]',
-        //     //   sourceMap: !isProduction,
-        //     // },
-        //   },
-        //   {
-        //     loader: 'sass-loader',
-        //     options: {
-        //       sourceMap: !isProduction,
-        //     },
-        //   },
-        // ],
       },
       {
         test: /\.css$/,
-        // include: [
-        //   path.resolve(__dirname, 'node_modules'),
-        // ],
         use: [
           'style-loader',
           'css-loader'
