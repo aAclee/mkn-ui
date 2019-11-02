@@ -1,7 +1,8 @@
 import React, { ReactElement } from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { HashRouter as Router, Switch } from 'react-router-dom';
 
 // Components
+import Route from '@components/middleware/route';
 import Login from '@components/authentication/login/login';
 
 // Style
