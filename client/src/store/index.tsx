@@ -1,4 +1,12 @@
-import { createStore, combineReducers, applyMiddleware, Store } from 'redux';
+import {
+  createStore,
+  combineReducers,
+  applyMiddleware,
+
+  // Types
+  Store,
+  Middleware,
+} from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 // Reducers
@@ -11,7 +19,7 @@ const rootReducer = combineReducers({
 export type AppState = ReturnType<typeof rootReducer>;
 
 export default function configureStore(): Store {
-  const middlewares: any[] = [];
+  const middlewares: Middleware[] = [];
   const middleWareEnhancer = applyMiddleware(...middlewares);
 
   const enhancer =
