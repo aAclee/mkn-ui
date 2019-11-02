@@ -51,7 +51,7 @@ const Login: React.FC = (): ReactElement => {
         </button>
       </div>
 
-      <div className="token-container">{`Token: ${token}`}</div>
+      <div className="token-container">{`Token: ${token ? token : '<no token>'}`}</div>
     </div>
   );
 };

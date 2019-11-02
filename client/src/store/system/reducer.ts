@@ -1,7 +1,7 @@
 import { UPDATE_SYSTEM, SystemState, SystemActionTypes } from './types';
 
 const initialState: SystemState = {
-  token: 'fake-token',
+  token: null,
   session: '',
 };
 
