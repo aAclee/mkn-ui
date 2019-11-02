@@ -2,7 +2,7 @@ import React, { ReactElement } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 
 // Components
-import Login from '@components/authentication/login';
+import Login from '@components/authentication/login/login';
 
 // Style
 import './app.scss';
@@ -17,7 +17,7 @@ const App: React.FC = (): ReactElement => (
         <Route path="/login">
           <Login />
         </Route>
-        <Route path="/:bad_path">
+        <Route path="/:404">
           <div>404 NOT FOUND!</div>
         </Route>
       </Switch>
