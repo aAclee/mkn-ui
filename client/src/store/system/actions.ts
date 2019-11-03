@@ -33,3 +33,9 @@ export const login = (
   }
 };
 /* eslint-enable no-console*/
+
+export const logout = (): DispatchFn<SystemActionTypes, void> => (
+  dispatch: Dispatch<SystemActionTypes>,
+): void => {
+  dispatch(updateSystemAction({ token: null }));
+};
