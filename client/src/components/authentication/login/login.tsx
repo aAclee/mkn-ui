@@ -1,8 +1,4 @@
 import React, { ReactElement } from 'react';
-import { useSelector } from 'react-redux';
-
-// Types
-import { AppState } from '@store/index';
 
 // Hooks
 import { useFormInput } from '@hooks/form-input.hook';
@@ -15,7 +11,6 @@ import { login } from '@store/system/actions';
 import './login.scss';
 
 const Login: React.FC = (): ReactElement => {
-  const token = useSelector((state: AppState): string => state.system.token);
   const username = useFormInput('', {
     name: 'username',
   });
@@ -28,8 +23,6 @@ const Login: React.FC = (): ReactElement => {
 
   function handleSubmit(): void {
     dispatchLogin(username.value, password.value);
-    // eslint-disable-next-line
-    console.log(`Username: ${username.value}; Password: ${password.value}`);
   }
 
   return (
@@ -50,8 +43,6 @@ const Login: React.FC = (): ReactElement => {
           Submit
         </button>
       </div>
-
-      <div className="token-container">{`Token: ${token ? token : '<no token>'}`}</div>
     </div>
   );
 };
