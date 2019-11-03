@@ -1,11 +1,13 @@
 import { Dispatch } from 'react';
-
-// Request
-import { post } from '../../../lib/util/request';
+import { postLogin } from '@api/login';
 
 // Types
-import { SystemPayload, UPDATE_SYSTEM, SystemActionTypes } from './types';
-// type DispatchFn = (action: SystemActionTypes) => Dispatch<any>;
+import { DispatchFn } from '@client-types/dispatch';
+import {
+  SystemPayload,
+  SystemActionTypes,
+  UPDATE_SYSTEM,
+} from '@client-types/system';
 
 export function updateSystemAction(
   newSystemState: SystemPayload,
@@ -17,18 +19,17 @@ export function updateSystemAction(
 }
 
 /* eslint-disable no-console*/
-export const login = (username: string, password: string): any => (
+export const login = (
+  username: string,
+  password: string
+): DispatchFn<SystemActionTypes, void> => async (
   dispatch: Dispatch<SystemActionTypes>,
-): any => {
-  return post({ username, password })
-    .then((response: Response): Promise<{ token: string }> => {
-      return response.json();
-    })
-    .then((data: { token: string }): string => {
-      console.log(data);
-      dispatch(updateSystemAction({ token: data.token }));
-      return data.token;
-    })
-    .catch((error: any): any => console.log(error));
+): Promise<void> => {
+  try {
+    const token = await postLogin(username, password);
+    dispatch(updateSystemAction({ token }));
+  } catch (e) {
+    console.error(e.message);
+  }
 };
 /* eslint-enable no-console*/

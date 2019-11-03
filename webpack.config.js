@@ -24,6 +24,8 @@ module.exports = {
       '@hooks': path.resolve(__dirname, 'client/src/hooks'),
       '@store': path.resolve(__dirname, 'client/src/store'),
       '@util': path.resolve(__dirname, 'client/lib/util'),
+      '@api': path.resolve(__dirname, 'client/lib/api'),
+      '@client-types': path.resolve(__dirname, 'client/types'),
     }
   },
 
