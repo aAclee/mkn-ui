@@ -29,7 +29,7 @@ export const login = (
     const token = await postLogin(username, password);
     dispatch(updateSystemAction({ token }));
   } catch (e) {
-    console.error(e);
+    console.error(e.message);
   }
 };
 /* eslint-enable no-console*/
