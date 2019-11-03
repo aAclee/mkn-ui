@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:8000';
 
-export function post<T = unknown>(data: T): Promise<Response> {
-  return fetch(API_URL + '/api/auth', {
+export async function post<R, T = unknown>(data: T): Promise<R> {
+  const resp = await fetch(API_URL + '/api/auth', {
     method: 'POST',
     mode: 'cors',
     headers: {
@@ -9,4 +9,6 @@ export function post<T = unknown>(data: T): Promise<Response> {
     },
     body: JSON.stringify(data),
   });
+
+  return resp.json();
 }

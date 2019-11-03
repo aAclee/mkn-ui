@@ -1,12 +1,10 @@
 import { useDispatch } from 'react-redux';
-import { Dispatch } from 'react';
 
-type ActionDispatchFunction<T> = (dispatch: Dispatch<T>) => void;
-type DispatchFunction<T> = (...args: T[]) => void;
+import { DispatchFn } from '@client-types/dispatch';
 
 export function useFunctionDispatch<T = unknown>(
-  func: (...args: T[]) => ActionDispatchFunction<T>,
-): DispatchFunction<T> {
+  func: (...args: T[]) => DispatchFn<unknown, unknown>,
+): (...args: T[]) => void {
   const dispatch = useDispatch();
   const dispatchFn = (...args: T[]): void => {
     func(...args)(dispatch);
