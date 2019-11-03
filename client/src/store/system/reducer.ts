@@ -1,4 +1,8 @@
-import { UPDATE_SYSTEM, SystemState, SystemActionTypes } from '@client-types/system';
+import {
+  SystemState,
+  SystemActionTypes,
+  UPDATE_SYSTEM,
+} from '@client-types/system';
 
 const initialState: SystemState = {
   token: null,
