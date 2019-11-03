@@ -1,6 +1,6 @@
 const auth: {[k: string]: string} = {
-  'admin.mkn@gmail.com': 'password'
-}
+  'admin.mkn@gmail.com': 'password',
+};
 
 type Login = {
   username: string;
@@ -17,7 +17,7 @@ export const resolvers = {
         return { token: '234dfd.134324.df23' };
       }
 
-      throw new Error('Username or password is incorrect!')
+      throw new Error('Username or password is incorrect!');
     },
   },
 };
