@@ -1,57 +1,30 @@
+//Instructions:
+    //1. Group color names by blue, gold, black etc..
+    //2. Add Opacity for Existing Colors in .25 intervals unless necessary
+        // $blue-whale-75: rgba(15, 47, 63, .75);
+        // $blue-whale-50: rgba(15, 47, 63, .5);
+        // $blue-whale-25: rgba(15, 47, 63, .25);
+    //3. for custom colors, you may find the color name using https://www.htmlcsscolor.com/ by entering hex/rgb code
+
 //blue
 $blue-whale: rgba(15, 47, 63);
-$blue-whale-75: rgba(15, 47, 63, .75);
-$blue-whale-50: rgba(15, 47, 63, .5);
-$blue-whale-25: rgba(15, 47, 63, .25);
-
 $chathams-blue: rgba(48, 87, 110);
-$chathams-blue-75: rgba(48, 87, 110, .75);
-$chathams-blue-50: rgba(48, 87, 110, .5);
-$chathams-blue-25: rgba(48, 87, 110, .25);
-
 $denim: rgba(37, 94, 172);
-$denim-75: rgba(37, 94, 172, .75);
-$denim-50: rgba(37, 94, 172, .5);
-$denim-25: rgba(37, 94, 172, .25);
 
 //gold
 $marigold: rgba(182, 139, 71);
-$marigold-75: rgba(182, 139, 71, .75);
-$marigold-50: rgba(182, 139, 71, .5);
-$marigold-25: rgba(182, 139, 71, .25);
-
 $metallic-gold: rgba(212, 179, 59);
-$metallic-gold-75: rgba(212, 179, 59, .75);
-$metallic-gold-50: rgba(212, 179, 59, .5);
-$metallic-gold-25: rgba(212, 179, 59, .25);
-
 $marzipan: rgba(233, 202, 130);
-$marzipan-75: rgba(233, 202, 130, .75);
-$marzipan-50: rgba(233, 202, 130, .5);
-$marzipan-25: rgba(233, 202, 130, .25);
 
 //black
 $black-russian: rgba(28, 28, 32);
-$black-russian-75: rgba(28, 28, 32, .75);
-$black-russian-50: rgba(28, 28, 32, .5);
-$black-russian-25: rgba(28, 28, 32, .25);
 
 //grey
 $masala: rgba(91, 87, 76);
-$masala-75: rgba(91, 87, 76, .75);
-$masala-50: rgba(91, 87, 76, .5);
-$masala-25: rgba(91, 87, 76, .25);
 
 //white
 $alabaster: rgba(239, 238, 228);
-$alabaster-75: rgba(239, 238, 228, .75);
-$alabaster-50: rgba(239, 238, 228, .5);
-$alabaster-25: rgba(239, 238, 228, .25);
-
 $white: rgba(225, 225, 255);
-$white-75: rgba(225, 225, 255, .75);
-$white-50: rgba(225, 225, 255, .5);
-$white-25: rgba(225, 225, 255, .25);
 
 //main variables (more to come)
 $primary-text: $black-russian;
