@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
 
 // Hooks
 import { useFormInput } from '@hooks/form-input.hook';
@@ -23,22 +24,26 @@ const Login: React.FC = (): ReactElement => {
   }
 
   return (
-    <div className="login-container">
-      <div className="input-boxes">
-        <label>
-          <span>username</span>
-          <input {...username} />
-        </label>
-        <label>
-          <span>password</span>
-          <input {...password} />
-        </label>
-      </div>
+    <div className="auth-container">
+      <div className="auth-content">
+        <h2>login</h2>
+        <div className="input-boxes">
+          <label>
+            <p>username</p>
+            <input {...username} />
+          </label>
+          <label>
+            <p>password</p>
+            <input {...password} />
+          </label>
+        </div>
 
-      <div className="submit-container">
-        <button type="button" data-test="submit-btn" onClick={handleSubmit}>
-          Submit
-        </button>
+        <div className="submit-container">
+          <Link to="/signup" className="auth-link">sign up</Link>
+          <button type="button" data-test="submit-btn" onClick={handleSubmit}>
+            Submit
+          </button>
+        </div>
       </div>
     </div>
   );
