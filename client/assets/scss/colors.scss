@@ -1,5 +1,6 @@
 //blue
 $blue-whale: rgba(15, 47, 63, 1);
+$blue-whale-75: rgba(15, 47, 63, .75);
 $chathams-blue: rgba(48, 87, 110, 1);
 $denim: rgba(37, 94, 172, 1);
 
@@ -16,9 +17,21 @@ $masala: rgba(91, 87, 76, 1);
 
 //white
 $alabaster: rgba(239, 238, 228, 1);
-$white: rgba(225, 225, 255, 1);
+$white: rgba(255, 255, 255, 1);
 
 //main variables (more to come)
-$primary-text: $black-russian;
+
+//background
 $primary-background: $white;
-$primary-navbar: $alabaster;
+$secondary-background: $alabaster;
+
+$primary-color-background: $blue-whale-75;
+
+//text
+$primary-text: $black-russian;
+$primary-color-text: $chathams-blue;
+$secondary-color-text: $marzipan;
+$primary-white-text: $alabaster;
+
+//border
+$primary-border: $blue-whale;
