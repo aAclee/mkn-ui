@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 // CSS Reset
 import '@csstools/normalize.css';
-import './index.css';
+import './index.scss';
 
 // Root Component
 import Root from './components/root';
