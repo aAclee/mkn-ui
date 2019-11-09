@@ -1,4 +1,24 @@
-$blue: rgba(52, 88, 170, 1);
-$grey: rgba(106, 106, 106, 1);
-$red: rgba(204, 0, 0, 1);
-$white: rgba(255, 255, 255, 1);
+//blue
+$blue-whale: rgba(15, 47, 63);
+$chathams-blue: rgba(48, 87, 110);
+$denim: rgba(37, 94, 172);
+
+//gold
+$marigold: rgba(182, 139, 71);
+$metallic-gold: rgba(212, 179, 59);
+$marzipan: rgba(233, 202, 130);
+
+//black
+$black-russian: rgba(28, 28, 32);
+
+//grey
+$masala: rgba(91, 87, 76);
+
+//white
+$alabaster: rgba(239, 238, 228);
+$white: rgba(225, 225, 255);
+
+//main variables (more to come)
+$primary-text: $black-russian;
+$primary-background: $white;
+$primary-navbar: $alabaster;
