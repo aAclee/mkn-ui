@@ -1,6 +1,4 @@
-const auth: {[k: string]: string} = {
-  'admin.mkn@gmail.com': 'password',
-};
+import { authenticate } from '../../lib/util/request';
 
 type Login = {
   username: string;
@@ -9,15 +7,20 @@ type Login = {
 
 export const resolvers = {
   Query: {
-    authenticate: (_parent: any, {
+    authenticate: async (_parent: any, {
       username, 
       password,
-    }: Login): { token: string } => {
-      if (auth[username] === password) {
-        return { token: '234dfd.134324.df23' };
-      }
+    }: Login): Promise<{ token: string }> => {
+      try {
+        const { data } =  await authenticate(username, password);
+        return data;
+      } catch (e) {
+        if (e.status === 401) {
+          throw new Error(e.data.error);
+        }
 
-      throw new Error('Username or password is incorrect!');
+        throw new Error(e);
+      }
     },
   },
 };
