@@ -3,7 +3,7 @@ export const typeDefs = `
     token: String
   }
 
-  type Query {
+  extend type Query {
     authenticate(username: String!, password: String!): Token
   }
 `;
