@@ -2,7 +2,6 @@ import React, { ReactElement } from 'react';
 
 // Hooks
 import { useFormInput } from '@hooks/form-input.hook';
-import { useFunctionDispatch } from '@hooks/function-dispatch.hook';
 
 // Actions
 import { login } from '@store/system/actions';
@@ -19,10 +18,8 @@ const Login: React.FC = (): ReactElement => {
     name: 'password',
   });
 
-  const dispatchLogin = useFunctionDispatch<string>(login);
-
   function handleSubmit(): void {
-    dispatchLogin(username.value, password.value);
+    login(username.value, password.value);
   }
 
   return (
