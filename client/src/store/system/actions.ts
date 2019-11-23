@@ -1,8 +1,14 @@
-import { Dispatch } from 'react';
+import { useDispatch } from 'react-redux';
 import { postLogin } from '@api/login';
 
+/**
+ * TODO: Consider refactoring the usage of dispatch. Currently
+ * useDispatch is invoked in each function and can be lazy
+ * loaded as needed. There should be no need to create a new
+ * dispatch with every action.
+ */
+
 // Types
-import { DispatchFn } from '@client-types/dispatch';
 import {
   SystemPayload,
   SystemActionTypes,
@@ -19,23 +25,19 @@ export function updateSystemAction(
 }
 
 /* eslint-disable no-console*/
-export const login = (
+export const login = async (
   username: string,
   password: string
-): DispatchFn<SystemActionTypes, void> => async (
-  dispatch: Dispatch<SystemActionTypes>,
 ): Promise<void> => {
   try {
     const token = await postLogin(username, password);
-    dispatch(updateSystemAction({ token }));
+    useDispatch()(updateSystemAction({ token }));
   } catch (e) {
     console.error(e.message);
   }
 };
 /* eslint-enable no-console*/
 
-export const logout = (): DispatchFn<SystemActionTypes, void> => (
-  dispatch: Dispatch<SystemActionTypes>,
-): void => {
-  dispatch(updateSystemAction({ token: null }));
+export const logout = (): void => {
+  useDispatch()(updateSystemAction({ token: null }));
 };
