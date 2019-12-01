@@ -23,8 +23,9 @@ module.exports = {
       '@components': path.resolve(__dirname, 'client/src/components'),
       '@hooks': path.resolve(__dirname, 'client/src/hooks'),
       '@store': path.resolve(__dirname, 'client/src/store'),
-      '@util': path.resolve(__dirname, 'client/lib/util'),
       '@api': path.resolve(__dirname, 'client/lib/api'),
+      '@util': path.resolve(__dirname, 'client/lib/util'),
+      '@design': path.resolve(__dirname, 'client/lib/design'),
       '@client-types': path.resolve(__dirname, 'client/types'),
     }
   },
