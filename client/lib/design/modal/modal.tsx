@@ -12,17 +12,13 @@ const ModalContainer: React.FC = (): ReactElement => {
     setShow(state.show);
   };
 
-  return (
+  return show ? (
     <div className="mkn-design-modal-container">
-      {
-        show ? (
-          <div className="mkn-design-modal-layout">
-            I AM A MODAL
-          </div>
-        ) : null
-      }
+      <div className="mkn-design-modal-layout">
+        I AM A MODAL
+      </div>
     </div>
-  );
+    ) : null;
 };
 
 export default ModalContainer;
