@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { any } from 'prop-types';
 
 const FormHeader: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = ({ children, ...props }) => {
   return (
@@ -26,34 +27,55 @@ const FormBody: React.FC<React.FormHTMLAttributes<HTMLFormElement>> = ({ childre
 
 const FormButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, ...props }) => {
   return (
-  <button {...props} >{children}</button>
+    <button {...props} >{children}</button>
   )
 }
 
-export default class Form extends React.Component {
-  static Header = FormHeader;
-  static Body = FormBody;
-  static Label = FormLabel;
-  static Input = FormInput;
-  static Button = FormButton;
-
-  render() {
-    return (
-      <div>{this.props.children}</div>
-    )
-  }
+const FormClose: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, ...props }) => {
+  debugger
+  return (
+    <FormContext.Consumer>
+      {formContext => {
+        debugger
+        return (
+          <button {...props} onClick={formContext.toggleShow}> {children} </button>
+        )
+      }}
+    </FormContext.Consumer>
+  )
 }
 
-// function renderForm(props) {
-//   const {label, ...otherProps}
-//   return (
-//     <Form.Header rightIcon={true}>
-//       Login Form
-//       <Form.RightIcon></Form.RightIcon>
-//     </Form.Header>
-//     <Form.Body>
-//       <Form.Input {...otherProps}></Form.Input>
-//       <Form.Submit onClick={() => {console.log('form')}}>Submit</Form.Submit>
-//     </Form.Body>
-//   );
-// }
+const initialState = {
+  show: true,
+  toggleShow: () => {},
+};
+
+const FormContext = React.createContext(initialState);
+
+function Form(props: any){
+  const [show, setShow] = useState(true);
+  const toggleShow = () => {
+    setShow(!show);
+  }
+  if(show){
+    return (
+      <FormContext.Provider value={{
+        show,
+        toggleShow,
+      }}>
+        {props.children}
+      </FormContext.Provider>
+    )
+  }
+
+  return null;
+}
+
+Form.Header = FormHeader;
+Form.Body = FormBody;
+Form.Label = FormLabel;
+Form.Input = FormInput;
+Form.Button = FormButton;
+Form.Close = FormClose;
+
+export default Form;
