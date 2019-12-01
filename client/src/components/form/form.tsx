@@ -1,5 +1,4 @@
 import React, { useState, useContext } from 'react';
-import { any } from 'prop-types';
 
 const FormHeader: React.FC<React.HTMLAttributes<HTMLHeadingElement>> = ({ children, ...props }) => {
   return (
@@ -32,11 +31,9 @@ const FormButton: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ c
 }
 
 const FormClose: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement>> = ({ children, ...props }) => {
-  debugger
   return (
     <FormContext.Consumer>
       {formContext => {
-        debugger
         return (
           <button {...props} onClick={formContext.toggleShow}> {children} </button>
         )
