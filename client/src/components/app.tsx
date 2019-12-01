@@ -12,7 +12,7 @@ import './app.scss';
 
 const App: React.FC = (): ReactElement => (
   <Router>
-    <div>
+    <div className="app-container">
       <Switch>
         <Route exact path="/">
           <Homepage />
